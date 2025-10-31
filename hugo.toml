@@ -14,7 +14,7 @@ enableRobotsTXT = true
 # 输出格式
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-
+  section = ["HTML", "RSS", "JSON"]
 # 主题参数
 [params]
   homeInfoParams = false
