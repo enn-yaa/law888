@@ -2,7 +2,8 @@ baseURL = "https://law888.xuufaa.com/"
 languageCode = "zh-cn"
 title = "法考笔记 · law888"
 theme = "PaperMod"
-paginate = 10
+[pagination]
+  pagerSize = 10
 enableRobotsTXT = true
 
 # 模块配置
