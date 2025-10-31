@@ -12,9 +12,16 @@ enableRobotsTXT = true
     path = "github.com/adityatelange/hugo-PaperMod"
 
 # 输出格式
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-  section = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS", "JSON"]
+  term = ["HTML", "RSS"]
 # 主题参数
 [params]
   homeInfoParams = false
@@ -50,3 +57,4 @@ enableRobotsTXT = true
     name = "关于"
     url = "/about/"
     weight = 5
+
