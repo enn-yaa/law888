@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="main">
+  <h1>📚 法考笔记 · xuufaa</h1>
+  <p>系统整理八大学科核心笔记与真题资料</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+    {{ $subjects := slice
+      (dict "title" "民法" "icon" "📘" "url" "/civil/")
+      (dict "title" "刑法" "icon" "⚖️" "url" "/criminal/")
+      (dict "title" "行政法" "icon" "🏛️" "url" "/administrative/")
+      (dict "title" "民诉法" "icon" "📜" "url" "/civil-procedure/")
+      (dict "title" "刑诉法" "icon" "🔍" "url" "/criminal-procedure/")
+      (dict "title" "商经知" "icon" "💼" "url" "/commercial/")
+      (dict "title" "三国法" "icon" "🌍" "url" "/international/")
+      (dict "title" "理论法" "icon" "📚" "url" "/theory/")
+    }}
+
+    {{ range $subjects }}
+    <a href="{{ .url }}" class="block rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+      <div class="text-3xl mb-3">{{ .icon }}</div>
+      <h2 class="text-xl font-semibold">{{ .title }}</h2>
+      <p class="text-gray-600 dark:text-gray-400 mt-2">查看相关文章 →</p>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
