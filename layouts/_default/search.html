@@ -6,19 +6,31 @@
 
   {{ partial "search.html" . }}
 
+  {{ if .Site.Taxonomies.series }}
   <h2>系列</h2>
-  {{ range $name, $taxonomy := .Site.Taxonomies.series }}
-    <a class="button" href="{{ $taxonomy.Page.Permalink }}">{{ $name }} ({{ len $taxonomy }})</a>
+  <div class="terms">
+    {{ range $name, $taxonomy := .Site.Taxonomies.series }}
+      <a href="{{ $taxonomy.Page.Permalink }}" class="taxonomy">{{ $name }} ({{ len $taxonomy }})</a>
+    {{ end }}
+  </div>
   {{ end }}
 
+  {{ if .Site.Taxonomies.categories }}
   <h2>分类</h2>
-  {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-    <a class="button" href="{{ $taxonomy.Page.Permalink }}">{{ $name }} ({{ len $taxonomy }})</a>
+  <div class="terms">
+    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+      <a href="{{ $taxonomy.Page.Permalink }}" class="taxonomy">{{ $name }} ({{ len $taxonomy }})</a>
+    {{ end }}
+  </div>
   {{ end }}
 
+  {{ if .Site.Taxonomies.tags }}
   <h2>标签</h2>
-  {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-    <a class="button" href="{{ $taxonomy.Page.Permalink }}">{{ $name }} ({{ len $taxonomy }})</a>
+  <div class="terms">
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <a href="{{ $taxonomy.Page.Permalink }}" class="taxonomy">{{ $name }} ({{ len $taxonomy }})</a>
+    {{ end }}
+  </div>
   {{ end }}
 </main>
 {{ end }}
