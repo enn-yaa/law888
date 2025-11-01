@@ -8,11 +8,13 @@
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
     </h1>
+
     {{- if .Description }}
     <div class="post-description">
         {{ .Description }}
     </div>
     {{- end }}
+
     {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
         {{- partial "translation_list.html" . -}}
@@ -20,10 +22,71 @@
     {{- end }}
 </header>
 
+<!-- 搜索框 -->
 <div id="searchbox">
     <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}"
         aria-label="search" type="search" autocomplete="off" maxlength="64">
     <ul id="searchResults" aria-label="search results"></ul>
 </div>
+
+<!-- 🔍 新增：系列 -->
+<section class="taxonomy-section">
+  <h2>📚 系列</h2>
+  <div class="taxonomy-list">
+    {{ range $name, $taxonomy := .Site.Taxonomies.series }}
+      <a href="{{ (index $taxonomy 0).Page.RelPermalink }}" class="tag">{{ $name }}</a>
+    {{ end }}
+  </div>
+</section>
+
+<!-- 🔍 新增：分类 -->
+<section class="taxonomy-section">
+  <h2>📂 分类</h2>
+  <div class="taxonomy-list">
+    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+      <a href="{{ (index $taxonomy 0).Page.RelPermalink }}" class="tag">{{ $name }}</a>
+    {{ end }}
+  </div>
+</section>
+
+<!-- 🔍 新增：标签 -->
+<section class="taxonomy-section">
+  <h2>🏷 标签</h2>
+  <div class="taxonomy-list">
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <a href="{{ (index $taxonomy 0).Page.RelPermalink }}" class="tag">{{ $name }}</a>
+    {{ end }}
+  </div>
+</section>
+
+<!-- 💅 样式 -->
+<style>
+.taxonomy-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.taxonomy-section h2 {
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.taxonomy-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.taxonomy-list a.tag {
+  background: #f4f4f4;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.taxonomy-list a.tag:hover {
+  background: #222;
+  color: #fff;
+}
+</style>
 
 {{- end }}{{/* end main */}}
