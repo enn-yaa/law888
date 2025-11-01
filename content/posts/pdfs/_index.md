@@ -1,7 +1,7 @@
 ---
 title: "PDF资料库 📂"
 url: "/posts/pdfs/"
-date: 2025-10-31
+date: 2025-11-01
 draft: false
 hidemeta: true
 weight: 9

@@ -1,7 +1,7 @@
 ---
 title: "其他内容 🪶"
 url: "/posts/others/"
-date: 2025-10-31
+date: 2025-11-01
 draft: false
 hidemeta: true
 weight: 10

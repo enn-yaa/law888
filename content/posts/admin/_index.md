@@ -1,7 +1,7 @@
 ---
 title: "行政法 🏛️"
 url: "/posts/admin/"
-date: 2025-10-31
+date: 2025-11-01
 draft: false
 hidemeta: true
 weight: 3

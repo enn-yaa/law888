@@ -1,7 +1,7 @@
 ---
 title: "民诉法 🧾"
 url: "/posts/civil-procedure/"
-date: 2025-10-31
+date: 2025-11-01
 draft: false
 hidemeta: true
 weight: 4
