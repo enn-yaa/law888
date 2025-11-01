@@ -26,6 +26,9 @@ hasCJKLanguage = true
   term = ["HTML", "RSS"]
   page = ["HTML"]
 
+[params.caching]
+  disableCacheBusting = false
+
 # 语法高亮 & HTML 渲染
 [markup]
   [markup.highlight]
