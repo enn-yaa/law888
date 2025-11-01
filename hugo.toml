@@ -2,9 +2,11 @@ baseURL = "https://law888.xuufaa.com/"
 languageCode = "zh-cn"
 title = "法考笔记 · law888"
 theme = "PaperMod"
+enableRobotsTXT = true
+hasCJKLanguage = true
+
 [pagination]
   pagerSize = 10
-enableRobotsTXT = true
 
 # 模块配置
 [module]
@@ -22,20 +24,49 @@ enableRobotsTXT = true
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS", "JSON"]
   term = ["HTML", "RSS"]
-# 主题参数
+  page = ["HTML"]
+
+# 语法高亮 & HTML 渲染
+[markup]
+  [markup.highlight]
+    style = "dracula"
+  [markup.goldmark.renderer]
+    unsafe = true
+
+# ---- 页面参数 ----
 [params]
-  homeInfoParams = false
+  title = "法考笔记 · law888"
+  description = "专注于法考笔记、真题解析与法学知识体系整理"
   defaultTheme = "auto"
+  disableThemeToggle = false
   ShowReadingTime = true
-  ShowShareButtons = false
-  ShowPostNavLinks = true
   ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowToc = true
+  comments = false
+  ShowShareButtons = false
   ShowCodeCopyButtons = true
   disableScrollToTop = false
-  showtoc = true
-  tocopen = false
 
-# 菜单栏
+  # ---- 首页文字 ----
+  [params.homeInfoParams]
+    Title = "📚 最近更新的法考笔记"
+    Content = "覆盖民法、刑法、诉讼法、商经知、理论法等主要模块。"
+
+  # ---- 搜索配置 ----
+  [params.search]
+    enabled = true
+    engine = "fuse"
+    placeholder = "搜索法考笔记…"
+
+  # ---- 页脚 ----
+  [params.footer]
+    enable = true
+    author = "law888"
+    text = "© 2022–2025 · CC BY-NC-SA 4.0 · 法考笔记 · law888"
+    position = "center"
+
+# ---- 导航栏 ----
 [menu]
   [[menu.main]]
     name = "首页"
@@ -52,13 +83,13 @@ enableRobotsTXT = true
     url = "/series/"
     weight = 3
 
- [[menu.main]]
+  [[menu.main]]
     name = "标签"
     url = "/tags/"
     weight = 4
 
   [[menu.main]]
-    name = "搜索"
+    name = "搜索🔍"
     url = "/search/"
     weight = 5
 

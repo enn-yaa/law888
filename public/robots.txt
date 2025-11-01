@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://law888.xuufaa.com/sitemap.xml
